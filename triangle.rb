@@ -15,6 +15,12 @@
 #
 def triangle(a, b, c)
   # WRITE THIS CODE
+  x,y,z = [a, b, c].sort  
+  # triangles cannot have 0 length side or a longest side shorter than the sum of other sides
+  if x <= 0 || x + y <= z
+    raise TriangleError
+  end
+
   if a == b && b == c
     return :equilateral
   elsif a == b || b == c || a == c
